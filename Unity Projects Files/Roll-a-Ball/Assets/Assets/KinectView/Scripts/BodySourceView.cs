@@ -133,6 +133,9 @@ public class BodySourceView : MonoBehaviour
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
             Kinect.Joint sourceJoint = body.Joints[jt];
+			if (jt == Kinect.JointType.SpineBase) {
+				sourceJoint
+			}
             Kinect.Joint? targetJoint = null;
             
             if(_BoneMap.ContainsKey(jt))
