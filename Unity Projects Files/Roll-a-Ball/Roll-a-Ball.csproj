@@ -283,6 +283,9 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/alexr/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Kinect">
+      <HintPath>C:\Users\alexr\Documents\Github\BuildGT2018\Unity Projects Files\Roll-a-Ball\obj\Debug\Microsoft.Kinect.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\PlayerController.cs" />
