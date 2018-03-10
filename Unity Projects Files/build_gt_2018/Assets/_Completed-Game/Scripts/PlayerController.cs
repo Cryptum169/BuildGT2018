@@ -9,12 +9,12 @@ public class PlayerController : MonoBehaviour {
 	
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
-	public Text countText;
-	public Text winText;
+//	public Text countText;
+//	public Text winText;
 
 	// Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
 	private Rigidbody rb;
-	private int count;
+//	private int count;
 
 	// At the start of the game..
 	void Start ()
@@ -23,13 +23,13 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 
 		// Set the count to zero 
-		count = 0;
+//		count = 0;
 
 		// Run the SetCountText function to update the UI (see below)
-		SetCountText ();
+//		SetCountText ();
 
 		// Set the text property of our Win Text UI to an empty string, making the 'You Win' (game over message) blank
-		winText.text = "";
+//		winText.text = "";
 	}
 
 	// Each physics step..
@@ -38,9 +38,14 @@ public class PlayerController : MonoBehaviour {
 		// Set some local float variables equal to the value of our Horizontal and Vertical Inputs
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
+		float moveUpwards = 0.0f;
+		if (Input.GetKeyDown("space")) {
+			moveUpwards += 30.0f;
+			moveVertical += 30.0f;
+		}
 
 		// Create a Vector3 variable, and assign X and Z to feature our horizontal and vertical float variables above
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+			Vector3 movement = new Vector3 (moveHorizontal, moveUpwards, moveVertical);
 
 		// Add a physical force to our Player rigidbody using our 'movement' Vector3 above, 
 		// multiplying it by 'speed' - our public player speed that appears in the inspector
@@ -66,16 +71,16 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// Create a standalone function that can update the 'countText' UI and check if the required amount to win has been achieved
-	void SetCountText()
-	{
-		// Update the text field of our 'countText' variable
-		countText.text = "Count: " + count.ToString ();
-
-		// Check if our 'count' is equal to or exceeded 12
-		if (count >= 12) 
-		{
-			// Set the text value of our 'winText'
-			winText.text = "You Win!";
-		}
-	}
+//	void SetCountText()
+//	{
+//		// Update the text field of our 'countText' variable
+//		countText.text = "Count: " + count.ToString ();
+//
+//		// Check if our 'count' is equal to or exceeded 12
+//		if (count >= 12) 
+//		{
+//			// Set the text value of our 'winText'
+//			winText.text = "You Win!";
+//		}
+//	}
 }

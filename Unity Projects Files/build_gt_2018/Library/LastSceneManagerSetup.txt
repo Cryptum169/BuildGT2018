@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/house.unity
+- path: Assets/_Completed-Game/Roll-a-ball.unity
   isLoaded: 1
   isActive: 1
